@@ -4,6 +4,7 @@ import {
   API_TOKEN,
   SUBDOMAIN,
   RELEASE_NAME,
+  RELEASE_DESC,
   PROJECT,
   CREATE,
   TICKETS,
@@ -56,6 +57,7 @@ async function run(): Promise<void> {
         core.debug(`Version ${RELEASE_NAME} is going to the created`)
         const versionToCreate: Version = {
           name: RELEASE_NAME,
+          description: RELEASE_DESC,
           archived: false,
           released: false,
           releaseDate: new Date().toISOString(),
@@ -69,6 +71,7 @@ async function run(): Promise<void> {
       const versionToUpdate: Version = {
         ...version,
         self: undefined,
+        description: RELEASE_DESC,
         released: false,
         releaseDate: new Date().toISOString(),
         userReleaseDate: undefined
