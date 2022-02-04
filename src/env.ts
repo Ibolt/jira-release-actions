@@ -7,6 +7,7 @@ export const SUBDOMAIN: string = core.getInput('subdomain', {required: true})
 export const RELEASE_NAME: string = core.getInput('release_name', {
   required: true
 })
+export const RELEASE_DESC: string = core.getInput('release_desc', {required: true})
 export const PROJECT: string = core.getInput('jira_project', {required: true})
 export const CREATE: string = core.getInput('create', {
   required: false
