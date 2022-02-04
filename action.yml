@@ -17,6 +17,9 @@ inputs:
   release_name:
     required: true
     description: Name of the release
+  release_desc:
+    required: true
+    description: Description of the release
   create:
     required: false
     description: Automatically create the release if not present in Jira
