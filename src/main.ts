@@ -7,7 +7,8 @@ import {
   PROJECT,
   CREATE,
   TICKETS,
-  DRY_RUN
+  DRY_RUN,
+  IS_RELEASED
 } from './env'
 import {Project} from './api'
 import {Version} from './models'
@@ -56,7 +57,7 @@ async function run(): Promise<void> {
         const versionToCreate: Version = {
           name: RELEASE_NAME,
           archived: false,
-          released: true,
+          released: IS_RELEASED,
           releaseDate: new Date().toISOString(),
           projectId: Number(project.project?.id)
         }
@@ -68,7 +69,7 @@ async function run(): Promise<void> {
       const versionToUpdate: Version = {
         ...version,
         self: undefined,
-        released: true,
+        released: IS_RELEASED,
         releaseDate: new Date().toISOString(),
         userReleaseDate: undefined
       }
