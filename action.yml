@@ -29,7 +29,10 @@ inputs:
     description: Dump the config
     required: false
     default: 'false'
-
+  is_released:
+    required: false
+    description: Flag to determing whether release should be marked as released
+    default: 'false'
 runs:
   using: 'node12'
   main: 'dist/index.js'
